@@ -36,7 +36,7 @@ const NewTransaction = ({ addTransaction }) => {
             <Typography style={{ fontFamily:'Kufam, sans-serif'}} variant="h5">معاملة جديدة</Typography>
             <TextField style={{ fontFamily:'Kufam, sans-serif'}} value={text} label="...الراتب , بضائع , ضرائب الخ " onChange = {(e) => setText(e.target.value)} />
             <TextField style={{ fontFamily:'Kufam, sans-serif'}} value={amount} label="..المبلغ" onChange = {(e) => setAmount(e.target.value)}  />
-            <StyledButton variant="contained" onClick={newTransaction}>إادخال المعاملة</StyledButton>
+            <StyledButton variant="contained" onClick={newTransaction}>إدخال المعاملة</StyledButton>
         </Container>
     )
 }

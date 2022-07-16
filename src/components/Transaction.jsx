@@ -11,11 +11,11 @@ const Transaction = ({transaction, deleteTransaction}) => {
     
     const sign = transaction.amount >= 0 ? ' SP ' : ' SP ';
     const amount =  Math.abs(transaction.amount) + sign;
-    const color = transaction.amount >=0 ? 'rgb(108, 203, 247)' : 'rgb(172, 126, 189)';
+    const color = transaction.amount >=0 ? 'rgb(108, 203, 247)' : 'rgb(255, 112, 112)';
      
 
     return (
-        <List style={{background: `${color}`, color: '#fff'}}>
+        <List style={{fontFamily: 'Kufam, sans-serif' ,background: `${color}`, color: '#fff'}}>
             <ListItemIcon>
                 <Chip  label="X" onClick={() => deleteTransaction(transaction.id)} 
                  style ={{fontWeight: 800 , background: '#fff' , color:'red' , maring: '10px'}}
