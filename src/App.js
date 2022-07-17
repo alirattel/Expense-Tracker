@@ -22,10 +22,11 @@ background: #FFF;
   border-radius: 20px;
   display: flex;
   width: 800px;
+  height: auto;
   & > div {
     padding: 10px;
     width: 50%;
-    height: 70vh;
+    height: auto;
   }
 }
 `
