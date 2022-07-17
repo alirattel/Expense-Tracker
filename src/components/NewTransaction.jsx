@@ -22,7 +22,9 @@ const StyledButton = styled(Button)`
 const NewTransaction = ({ addTransaction }) => {
     const [text, setText] = useState('');
     const [amount, setAmount] = useState();
+    var flag1 = true , flag2 = true
     const newTransaction = e => {
+        document.getElementById('am').innerText = ''
         const transaction = {
             id: Math.floor(Math.random() * 100000000),
             text: text,
@@ -31,17 +33,21 @@ const NewTransaction = ({ addTransaction }) => {
         if (text === "" || text.match(/^\s+$/)) {
             Swal.fire({icon:'error',text:'يرجى ملئ هذا الحقل'})
             document.getElementById("text").style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
+            flag1 = false
+        }else{
+            flag1 = true
+            document.getElementById("text").style.backgroundColor = '#fff';
         }
-        else if (amount === '' || isNaN(amount) || amount.match(/^\s+$/)) {
+        if(amount === '' || isNaN(amount) || amount.match(/^\s+$/)) {
             Swal.fire({icon:'error',text:'يرجى إدخال رقم '})
             document.getElementById("am").style.backgroundColor = 'rgba(255, 0, 0, 0.1)';
-        }
-        else {
-            addTransaction(transaction);
+            flag2 = false
+        } else {
+            flag2 = true
             document.getElementById("am").style.backgroundColor = '#fff';
-            document.getElementById("text").style.backgroundColor = '#fff';
-            document.querySelector('.am').value = ''
-            document.querySelector('.text').value = '';
+        }
+        if(flag1 && flag2) {
+            addTransaction(transaction);
         }
     }
 
