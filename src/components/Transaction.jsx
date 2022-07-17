@@ -17,12 +17,10 @@ const Transaction = ({transaction, deleteTransaction}) => {
     return (
         <List style={{fontFamily: 'Kufam, sans-serif' ,background: `${color}`, color: '#fff'}}>
             <ListItemIcon>
-                <Chip  label="X" onClick={() => deleteTransaction(transaction.id)} 
-                 style ={{fontWeight: 800 , background: '#fff' , color:'red' , maring: '10px'}}
-                />
+                <Chip   label="X" onClick={() => deleteTransaction(transaction.id)} style ={{fontFamily: 'Sigmar One, cursive' , fontWeight: 800 , background: '#fff' , color:'rgb(255, 93, 93)' , maring: '10px'}}/>
             </ListItemIcon>
-            <ListItemText primary={transaction.text} />
-            <ListItemText primary={amount} />
+            <ListItemText  primary={amount} />
+            <ListItemText  primary={transaction.text} />
         </List>
     )
 }
